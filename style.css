@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.buttons {
+    display: flex;
+    justify-content: end;
+}
+button {
+    width: 5%;
+    height: 10vh;
+    background-color: white;
+    font-size: 1.5rem;
+}
+.scores {
+    font-size: 2rem;
+}
+.result {
+    display: flex;
+    justify-content: center;
+}
+body{
+    margin: 1rem;
+}
+.buttons button.active {
+  background-color: black;
+  color:white;
+}
