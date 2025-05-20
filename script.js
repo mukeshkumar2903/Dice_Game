@@ -13,15 +13,17 @@ const imgArray = [
 let score = 0;
 let selectedValue = null;
 
-buttons.forEach((ele,index)=>{
-   let removecolor; 
-   
-    buttons[index].addEventListener("click",()=>{
-          removecolor=buttons[index]
-          selectedValue=  buttons[index].innerHTML
-          buttons.forEach((ele)=>ele.classList.remove("active"))
-         ele.classList.add("active")
-          
+let lastBtn=null;
+
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        if(lastBtn){
+            lastBtn.classList.remove("active");
+
+        }
+        button.classList.add("active");
+        selectedValue = parseInt(button.getAttribute("btn"));
+        lastBtn=button;
     });
 });
 
@@ -43,6 +45,6 @@ img.addEventListener("click", () => {
         console.log(score);
         
     }
-    scores.innerHTML=score;
+    scores.textContent=score;
     selectedValue=null;
 });
